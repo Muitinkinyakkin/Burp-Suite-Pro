@@ -46,7 +46,8 @@ if ! command -v java >/dev/null 2>&1; then
     sudo update-alternatives --set javac /usr/local/java/jre8/jre1.8.0_361/bin/javac 1
     echo "Java JRE 8 downloaded and installed successfully"
 fi
-
+# If you run into the error "Linux_setup.sh: 50: [[: not found", modify the condition to use single brackets "[ " instead:
+# if [ $EUID -eq 0 ]; then
 if [[ $EUID -eq 0 ]]; then
     # Download Burp Suite Profesional Latet Version
     echo 'Downloading Burp Suite Professional ....'
